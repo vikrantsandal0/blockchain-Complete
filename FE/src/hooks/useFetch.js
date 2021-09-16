@@ -122,7 +122,7 @@ function useFetch(
   }, [pageUrl]);
 
   const run = (url) => {
-    console.log('inside run=====',url);
+    console.log('inside run=====', url);
     setPageUrl(url)
   };
 

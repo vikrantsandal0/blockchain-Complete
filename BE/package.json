@@ -28,7 +28,6 @@
     "redis-mock": "0.49.0",
     "sinon": "7.5.0",
     "chai-uuid": "1.0.6",
-    "sequelize-mock": "0.10.2",
     "mocha": "6.2.2",
     "mochawesome": "4.1.0",
     "chai": "4.2.0",

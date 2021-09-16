@@ -26,7 +26,7 @@ export const getBlocks = async (req, res) => {
 		const { data } = await axiosInstance(url);
 		console.log('result========', data);
 
-        await redisHelper.setKey(redisKey, JSON.stringify(data));
+        await redisHelper.setKey(redisKey, JSON.stringify(data), 3600);
 		const paginatedBlocks = helper.getPaginatedData(data, page, consts.PAGE_SIZE);
 
 		return res.status(consts.successMHTTPCode).json({
