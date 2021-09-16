@@ -24,8 +24,7 @@ module.exports = {
 	redisHlpr_readyClstrEvent: "Redis Cluster emitted 'ready' event",
 	redisHlpr_errorClstrEvent: "Redis Cluster emitted 'error' event",
 	redisHlpr_fullReadyClstrEvent: "Redis Cluster emitted 'fullReady' event",
-	redisHlpr_connectClstrEvent: "Redis Cluster emitted 'connect' event",
-	redisHlpr_quitCallback: "In Quit callback in Redis Client", 
+	redisHlpr_quitCallback: "In Quit callback in Redis Client",
 	redisHlpr_connecting: "Connecting to Redis Client",
 	redisHlpr_connected: "Connected to Redis Client",
 	redisHlpr_getCallback: "In Get callback in Redis Client",
@@ -34,7 +33,7 @@ module.exports = {
 	redisHlpr_setValueLog: (key, value, token_expiry) => `Setting value for key: ${key}, ${value}, ${token_expiry} in Redis Client`,
 	redisHlpr_deleteCallback: "In Delete callback in Redis Client",
 	redisHlpr_getValueLog: (key) => `Getting value of key: ${key}`,
-	redisHlpr_blocksCacheResult : (result) => `blocks cache result : ${result}`,
+	redisHlpr_blocksCacheResult: (result) => `blocks cache result : ${result}`,
 
 	/* Server log messages */
 	server_exit: "Exiting process because of error: ",
@@ -46,19 +45,25 @@ module.exports = {
 
 	/* get blocks*/
 	gBs_start: "getBlocks: get blocks start",
-	gBs_end: "getBlocks: END: get trades ends",
-	gBs_valReqBody: "getBlocks: Validating the request body",
+	gBs_end: "getBlocks: END: get blocks ends",
+	gBs_valReqBody: (schema) => `getBlocks: Validating the request body - ${schema}`,
+	gBs_paginatedBlocks: (list) => `getRawBlocks: paginated blocks---- ${list}`,
 	gBs_valReqBodyFail: "getBlocks: Failed: Validating the request body",
 	gBs_valReqBodySuccess: "getBlocks: Success: Validating the request body",
 
 
 	/* get raw block*/
 	gRb_start: "getRawBlocks: get raw block starts",
-	gRb_end: "getRawBlocks: END: get trades ends",
-	gRb_valReqBody: "getRawBlocks: Validating the request body",
+	gRb_end: "getRawBlocks: END: get raw block ends",
+	gRb_valReqBody: (schema) => `getRawBlocks: Validating the request body- ${schema}`,
+	gRb_paginatedTxns: (list) => `getRawBlocks: paginated txns---- ${list}`,
 	gRb_valReqBodyFail: "getRawBlocks: Failed: Validating the request body",
 	gRb_valReqBodySuccess: "getRawBlocks: Success: Validating the request body",
 
 	/* validator  */
 	val_start: "validator stat: validating body, query, params start",
+
+	/* check flow params */
+	cF_start: (originalUrl, query, params) => `checkFlowAndParams:${originalUrl} - ${query} - ${params}`
+
 };

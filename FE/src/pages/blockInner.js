@@ -1,3 +1,7 @@
+/** 
+ * Created by vikrant sandal - 16-09-2021
+*/
+import moment from 'moment';
 import { useState } from 'react';
 import { useHistory, useLocation, useParams } from "react-router";
 import AppPagination from "../Components/AppPagination";
@@ -36,8 +40,6 @@ function BlockInner() {
   const [currentPage, setCurrentPage] = useState(() => (pageId ? pageId : 1));
 
   const { data = {}, itemsCount } = result || {};
-  console.log('result=====', result);
-  console.log('data=====', data);
   const itemsPerPage = result ? result.length : 0;
 
   // on pagination click
@@ -91,7 +93,10 @@ function BlockInner() {
                 return (
                   <Row key={txItem.hash}>
                     {Object.keys(transactionObj).map((item, index) => {
-                      return <td key={item}>{txItem[item]}</td>;
+                      return <td key={item}>{
+                        (item === 'fee') ? (txItem[item] / 100000000).toFixed(8) :
+                        (item === 'time') ? moment(txItem[item]*1000,'x').format('YYYY-MM-DD HH:mm:ss') :  txItem[item]
+                      }</td>;
                     })}
                   </Row>
                 );

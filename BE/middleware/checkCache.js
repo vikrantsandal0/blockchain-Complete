@@ -29,7 +29,6 @@ export const checkCacheIfExists = async (req, res, next) => {
     }
 
     try {
-      console.log('here value present====');
       result = JSON.parse(result)
     }
     catch (e) {

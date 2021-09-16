@@ -5,7 +5,7 @@ function AppPagination({
   totalItems,
   currentPage = 1,
   handlePaginationClick,
-  maxPage=5
+  maxPage = 5
 }) {
   const paginageObj = paginate(totalItems, currentPage, itemsPerPage, maxPage);
   const { pages, totalPages } = paginageObj;

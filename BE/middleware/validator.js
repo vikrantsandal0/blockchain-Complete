@@ -5,9 +5,8 @@ import helper from '../utils/helper';
 import logger from '../utils/logger';
 
 export const getBlocksValidator = (req, res, next) => {
-    logger.info(logMsgs.val_start);
     const schemaToCheck = { ...req.query };
-    console.log('schema to check====', schemaToCheck);
+    logger.info(logMsgs.gBs_valReqBody(schemaToCheck));
 
     const schema = Joi.object().keys({
         page: Joi.number().optional()
@@ -19,10 +18,9 @@ export const getBlocksValidator = (req, res, next) => {
 };
 
 export const getRawBlockValidator = (req, res, next) => {
-    logger.info(logMsgs.val_start);
-    console.log('here====');
     const schemaToCheck = { ...req.query, ...req.params };
-    console.log('schema to check====', schemaToCheck);
+    logger.info(logMsgs.gRb_valReqBody(schemaToCheck));
+    
     const schema = Joi.object().keys({
         block_hash_id: Joi.string().required(),
         page: Joi.number().optional()

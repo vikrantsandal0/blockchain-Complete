@@ -97,7 +97,6 @@ function useFetch(
     dispatch({ type: "pending" });
 
     try {
-      console.log('url=====', pageUrl);
       const response = await fetch(pageUrl, { ...options, headers });
       if (!response.ok) {
         throw new Error(response.statusText);
@@ -121,9 +120,8 @@ function useFetch(
     };
   }, [pageUrl]);
 
-  const run = (url) => {
-    console.log('inside run=====', url);
-    setPageUrl(url)
+  const run = (runUrl) => {
+    setPageUrl(runUrl)
   };
 
   return {

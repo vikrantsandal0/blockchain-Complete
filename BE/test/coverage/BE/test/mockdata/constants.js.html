@@ -1,0 +1,265 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for BE/test/mockdata/constants.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">BE/test/mockdata</a> constants.js</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>3/3</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/0</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/0</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>3/3</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">exports.mockUUID = "59b18399-5b4c-4e68-8ff4-bac4aea93bc1";
+exports.mockValueGetBlocks = {
+    absentInRedis: null,
+    getBlockDatapresentInRedis: "[{\"hash\":\"0000000000000000000c61959dd2676e8cb21eee5a00b3b81a2a764d7bfd1de8\",\"height\":700339,\"time\":1631532719,\"block_index\":700339},{\"hash\":\"0000000000000000000659caaaa68602d6a2d5814e6bf4f4414e230382c9d1d6\",\"height\":700338,\"time\":1631532616,\"block_index\":700338},{\"hash\":\"0000000000000000000b52a0f75f44d6ea2c5f6c8b7241d518e42aaeb7a955d4\",\"height\":700337,\"time\":1631531598,\"block_index\":700337},{\"hash\":\"0000000000000000000f2be0611771754b75aebc3dfd39b3b44535d16904bc74\",\"height\":700336,\"time\":1631531469,\"block_index\":700336},{\"hash\":\"00000000000000000000f12ced57ea2e496dc3026138f23f0b7433e86baf927f\",\"height\":700335,\"time\":1631531322,\"block_index\":700335},{\"hash\":\"00000000000000000007f463033f9fb91137068bd2c2c21765de727ecf3f9885\",\"height\":700334,\"time\":1631530775,\"block_index\":700334},{\"hash\":\"0000000000000000000114b1ea71bb2c6fce0a129a6290494de1e2b16e9a5137\",\"height\":700333,\"time\":1631525004,\"block_index\":700333},{\"hash\":\"000000000000000000047c374fce2be21cff8924a96de5f8075505aac8752957\",\"height\":700332,\"time\":1631524861,\"block_index\":700332}]",
+    getBlocksDataInsertInRedis: [
+        {
+            "hash": "0000000000000000000c61959dd2676e8cb21eee5a00b3b81a2a764d7bfd1de8",
+            "height": 700339,
+            "time": 1631532719,
+            "block_index": 700339
+        },
+        {
+            "hash": "0000000000000000000659caaaa68602d6a2d5814e6bf4f4414e230382c9d1d6",
+            "height": 700338,
+            "time": 1631532616,
+            "block_index": 700338
+        },
+        {
+            "hash": "0000000000000000000b52a0f75f44d6ea2c5f6c8b7241d518e42aaeb7a955d4",
+            "height": 700337,
+            "time": 1631531598,
+            "block_index": 700337
+        },
+        {
+            "hash": "0000000000000000000f2be0611771754b75aebc3dfd39b3b44535d16904bc74",
+            "height": 700336,
+            "time": 1631531469,
+            "block_index": 700336
+        }
+    ],
+    getRawBlockDataPresentInRedis: "{\"hash\":\"0000000000000000000c61959dd2676e8cb21eee5a00b3b81a2a764d7bfd1de8\",\"prev_block\":\"0000000000000000000659caaaa68602d6a2d5814e6bf4f4414e230382c9d1d6\",\"time\":1631532719,\"fee\":7478379,\"size\":1316559,\"block_index\":700339,\"main_chain\":true,\"height\":700339,\"weight\":3992973,\"tx\":[{\"hash\":\"4e30a94680619b17ff87ab78bfbc458960166064128cf6a62c4c35ed5f081907\",\"ver\":2,\"vin_sz\":1,\"vout_sz\":2,\"size\":225,\"weight\":573,\"fee\":43258,\"relayed_by\":\"0.0.0.0\",\"lock_time\":700338,\"tx_index\":249731074598569,\"double_spend\":false,\"time\":1631532711,\"block_index\":700339,\"block_height\":700339}]}",
+    getRawBlockDataInsertInRedis: {
+        "hash": "0000000000000000000c61959dd2676e8cb21eee5a00b3b81a2a764d7bfd1de8",
+        "prev_block": "0000000000000000000659caaaa68602d6a2d5814e6bf4f4414e230382c9d1d6",
+        "time": 1631532719,
+        "fee": 7478379,
+        "size": 1316559,
+        "block_index": 700339,
+        "main_chain": true,
+        "height": 700339,
+        "weight": 3992973,
+        "tx": [
+            {
+                "hash": "4e30a94680619b17ff87ab78bfbc458960166064128cf6a62c4c35ed5f081907",
+                "ver": 2,
+                "vin_sz": 1,
+                "vout_sz": 2,
+                "size": 225,
+                "weight": 573,
+                "fee": 43258,
+                "relayed_by": "0.0.0.0",
+                "lock_time": 700338,
+                "tx_index": 249731074598569,
+                "double_spend": false,
+                "time": 1631532711,
+                "block_index": 700339,
+                "block_height": 700339,
+            }
+        ]
+    }
+}
+exports.mockRedisValueSbid = 'c57fbebb-b24c-491f-a9db-93497de833bd:ed42a65e-6d8c-477e-af75-7588c0c222cc:9f6d23cc-645a-4fef-9c48-8b530901ebb8:Dev'
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
+                at Thu Sep 16 2021 17:56:50 GMT+0530 (India Standard Time)
+            </div>
+        </div>
+        <script src="../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../sorter.js"></script>
+        <script src="../../../block-navigation.js"></script>
+    </body>
+</html>
+    

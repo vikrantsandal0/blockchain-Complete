@@ -4,7 +4,7 @@ import { getBlocksValidator, getRawBlockValidator } from '../middleware/validato
 import { Router } from "express"
 const router = Router()
 
-router.get("/", (req, res) => res.status(200).json({ "Recipe API": "Healthy" }))
+router.get("/", (req, res) => res.status(200).json({ "BlockChain API": "Healthy working fine" }))
 
 /*get blocks  /api/v1/getBlocks */
 router.get("/getBlocks", getBlocksValidator, checkCacheIfExists, blockChainControllers.getBlocks);

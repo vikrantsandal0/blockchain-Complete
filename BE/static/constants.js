@@ -67,7 +67,6 @@ exports.REDIS_KEY = {
 	//create keys based on flows
 	KEY_CREATION: (details) => {
 		let key;
-		console.log('this===', this);
 		switch (details.flow) {
 			case 'getBlocks': {
 				key = `blocks-${details.date}`;

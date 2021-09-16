@@ -1,3 +1,4 @@
+import moment from 'moment';
 import { useEffect, useState } from "react";
 import { Alert } from "react-bootstrap";
 import { Link, useLocation, useHistory } from "react-router-dom";
@@ -35,7 +36,6 @@ export function Blocks() {
   const itemsPerPage = result ? result.length : 0;
 
   const handlePaginationClick = (pageNum) => {
-    console.log('pageNum====',pageNum);
     setCurrentPage(pageNum);
     history.push({
       pathname: "/",
@@ -75,7 +75,7 @@ export function Blocks() {
                         }
                         return (
                           <td width='100px' key={`${item[key]}-${index}`}>
-                            {item[key]}
+                            {key === 'time' ? moment(item[key]*1000,'x').format('YYYY-MM-DD HH:mm:ss') : item[key]}
                           </td>
                         );
                       })}

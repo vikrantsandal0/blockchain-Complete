@@ -80,20 +80,18 @@ run FE - npm start
 ```
 
 ### POSTMAN
-[link](https://www.getpostman.com/collections/dd2bea693ddb79052cdb)
+[link to Postman Collection](https://www.getpostman.com/collections/dd2bea693ddb79052cdb)
 
 ### images for reference
 * **FRONTEND**
-<img width="1789" alt="Screenshot 2021-09-16 at 12 13 11 PM" src="https://user-images.githubusercontent.com/38485799/133563269-3125780a-be3c-4d99-81de-7457730ea244.png">
-<img width="1762" alt="Screenshot 2021-09-16 at 12 13 37 PM" src="https://user-images.githubusercontent.com/38485799/133563291-37614e27-20b1-460c-b2d9-37d9c38a64b0.png">
+<img width="1427" alt="Screenshot 2021-09-16 at 5 58 53 PM" src="https://user-images.githubusercontent.com/38485799/133612345-7951eb5b-189f-4fd3-9b59-4a17be455bc5.png">
+<img width="1393" alt="Screenshot 2021-09-16 at 5 59 06 PM" src="https://user-images.githubusercontent.com/38485799/133612335-d4696e07-0e86-47b9-85ca-1685555ab6d1.png">
 
 * **MIDDLEWARE DESIGN PATTERN**
 ![1_dWMuOSIJsuU27gZfuxJwRQ](https://user-images.githubusercontent.com/38485799/97068549-0f66f880-15e6-11eb-8021-35f848500bda.png)<br /><br /><br /><br /><br /><br />
 
 * **CACHING APPROACH**
 ![Screenshot from 2020-10-24 10-44-28](https://user-images.githubusercontent.com/38485799/97068545-0b3adb00-15e6-11eb-97fe-972e0105e9fc.png)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-
-
 
 ## Authors
 

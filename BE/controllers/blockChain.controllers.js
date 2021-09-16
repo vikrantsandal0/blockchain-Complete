@@ -20,20 +20,19 @@ export const getBlocks = async (req, res) => {
 	try {
 		const { middleWareObj: { redisKey }, query: { page } } = req;
 		const axiosInstance = getAxiosInstance()
-		console.log('axiosInstance----',axiosInstance.toString());
 		const url = `${consts.blockChainUrls.GET_BLOCKS}/${moment().subtract(1, "days").valueOf()}/?format=json`;
-		//console.log('await axiosInstance(url);=======',(await axiosInstance(url)).toString());
 		const { data } = await axiosInstance(url);
-		console.log('result========', data);
 
-        await redisHelper.setKey(redisKey, JSON.stringify(data), 3600);
+		await redisHelper.setKey(redisKey, JSON.stringify(data), 3600);
 		const paginatedBlocks = helper.getPaginatedData(data, page, consts.PAGE_SIZE);
+		logger.info(logMsgs.gBs_paginatedBlocks(paginatedBlocks));
+
 
 		return res.status(consts.successMHTTPCode).json({
 			status: consts.successMHTTPCode,
 			responseTimeStamp: + new Date(),
 			message: consts.successMsg,
-			result: { data : paginatedBlocks, itemsCount : data.length}
+			result: { data: paginatedBlocks, itemsCount: data.length }
 		});
 	}
 	catch (err) {
@@ -47,31 +46,24 @@ export const getRawBlock = async (req, res) => {
 
 	logger.info(logMsgs.gRb_start);
 	try {
-        console.log('req query---', req.query);
-		console.log('req params', req.params);
 		const { middleWareObj: { redisKey }, params: { block_hash_id: blockHashId }, query: { page } } = req;
-
-		const axiosInstance = getAxiosInstance()
-
+		const axiosInstance = getAxiosInstance();
 		const url = `${consts.blockChainUrls.GET_RAW_BLOCK}/${blockHashId}`;
 		const { data } = await axiosInstance(url);
-
-		console.log('result========', data);
 		/**
 		 * set value which is data from above api corresponding to key getRawBlocks-blockHashid
 		 * getRawBlocks-1233424442 :  data
 		 */
-		
 		await redisHelper.setKey(redisKey, JSON.stringify(data), 600);
 		const paginatedTxns = helper.getPaginatedData(data.tx, page, consts.PAGE_SIZE);
-		console.log('paginatedTxns========', paginatedTxns);
 
+		logger.info(logMsgs.gRb_paginatedTxns(paginatedTxns));
 
 		return res.status(consts.successMHTTPCode).json({
 			status: consts.successMHTTPCode,
 			responseTimeStamp: + new Date(),
 			message: consts.successMsg,
-			result: { data: { ...data, tx: paginatedTxns }, itemsCount : data.tx.length }
+			result: { data: { ...data, tx: paginatedTxns }, itemsCount: data.tx.length }
 		});
 
 	}

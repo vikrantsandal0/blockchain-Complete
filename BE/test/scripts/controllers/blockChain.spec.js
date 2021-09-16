@@ -16,12 +16,8 @@ chai.use(require("chai-http"));
 chai.use(require("chai-uuid"));
 chai.should();
 
+//test cases for getBlocks
 describe("GET /api/v1/getBlocks", () => {
-
-    beforeEach(() => {
-
-    });
-
     after((done) => {
         app.close();
         done();
@@ -37,14 +33,13 @@ describe("GET /api/v1/getBlocks", () => {
         chai.request(app)
             .get(`/api/v1/getBlocks`)
             .end((err, res) => {
-                console.log('res.body====', res.body);
                 res.should.have.status(200);
                 res.body.should.be.a("object");
                 res.body.message.should.be.eql("SUCCESS");
                 done();
             });
     });
-    it.only("get blocks - happy flow -  value not present in redis", (done) => {
+    it("get blocks - happy flow -  value not present in redis", (done) => {
         sinon.stub(redisHelper, "getKey").resolves(consts.mockValueGetBlocks.absentInRedis);
         sinon.stub(axios, 'create').returns((() => {
             return (url) => {
@@ -55,7 +50,6 @@ describe("GET /api/v1/getBlocks", () => {
         chai.request(app)
             .get(`/api/v1/getBlocks`)
             .end((_, res) => {
-                console.log('res.body====', res.body);
                 res.should.have.status(200);
                 res.body.should.be.a("object");
                 res.body.message.should.be.eql("SUCCESS");
@@ -67,7 +61,6 @@ describe("GET /api/v1/getBlocks", () => {
         chai.request(app)
             .get(`/api/v1/getBlocks?page=abc`)
             .end((err, res) => {
-                console.log('res.body====', res.body);
                 res.should.have.status(503);
                 res.body.should.be.a("object");
                 res.body.message.should.be.eql('"page" must be a number');
@@ -76,12 +69,8 @@ describe("GET /api/v1/getBlocks", () => {
     });
 });
 
+//test cases for getRawBlock
 describe("GET /api/v1/getRawBlock/:block_hash_id", () => {
-
-    beforeEach(() => {
-
-    });
-
     after((done) => {
         app.close();
         done();
@@ -95,16 +84,15 @@ describe("GET /api/v1/getRawBlock/:block_hash_id", () => {
     it("get Raw block - happy flow -  value present in redis", (done) => {
         sinon.stub(redisHelper, "getKey").resolves(consts.mockValueGetBlocks.getRawBlockDataPresentInRedis);
         chai.request(app)
-            .get(`/api/v1/getRawBlock/:block_hash_id`)
-            .end((err, res) => {
-                console.log('res.body====', res.body);
+            .get(`/api/v1/getRawBlock/${consts.mockUUID}`)
+            .end((_, res) => {
                 res.should.have.status(200);
                 res.body.should.be.a("object");
                 res.body.message.should.be.eql("SUCCESS");
                 done();
             });
     });
-    it.only("get Raw block - happy flow -  value not present in redis", (done) => {
+    it("get Raw block - happy flow -  value not present in redis", (done) => {
         sinon.stub(redisHelper, "getKey").resolves(consts.mockValueGetBlocks.absentInRedis);
         sinon.stub(axios, 'create').returns((() => {
             return (url) => {
@@ -113,24 +101,12 @@ describe("GET /api/v1/getRawBlock/:block_hash_id", () => {
         })());
         sinon.stub(redisHelper, "setKey").resolves([]);
         chai.request(app)
-            .get(`/api/v1/getRawBlock/:block_hash_id`)
+            .get(`/api/v1/getRawBlock/${consts.mockUUID}?page=1`)
             .end((_, res) => {
-                console.log('res.body====', res.body);
                 res.should.have.status(200);
                 res.body.should.be.a("object");
                 res.body.message.should.be.eql("SUCCESS");
-                res.body.result.itemsCount.should.be.eql(consts.mockValueGetBlocks.getRawBlockDataInsertInRedis.length);
-                done();
-            });
-    });
-    it("get Raw block - incorrect page number - error expected", (done) => {
-        chai.request(app)
-            .get(`/api/v1/getRawBlock/:block_hash_id?page=abc`)
-            .end((err, res) => {
-                console.log('res.body====', res.body);
-                res.should.have.status(503);
-                res.body.should.be.a("object");
-                res.body.message.should.be.eql('"page" must be a number');
+                res.body.result.itemsCount.should.be.eql(consts.mockValueGetBlocks.getRawBlockDataInsertInRedis.tx.length);
                 done();
             });
     });
